@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    {{ news }}
+    <h1>{{ title }}</h1>
+    {% for post in news %}
+        <div class="alert alert-light">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text }}</p>
+            <span class="text-muted">Publication: {{ post.date|date:"j F Y, H:i:s" }}</span>
+            {% if post.author %}
+                <p><b>Author:</b> <mark>{{ post.author }}</mark></p>
+            {% else %}
+                <p><b>Author:</b> <mark>Admin</mark></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

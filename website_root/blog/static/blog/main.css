@@ -1,0 +1,27 @@
+body {
+    background: #fafafa;
+}
+
+.alert-light {
+    border-color: #006b1b;
+}
+
+.form-register {
+    padding: 20px;
+    background: #fafafa;
+    border: 1px solid silver;
+}
+
+.form-register .helptext {
+    color: #b7b7b7;
+}
+
+.form-register ul.errorlist {
+    color: #ca5858;
+    font-weight: bold;
+}
+
+footer {
+    width: 70%;
+    margin-left: -15%;
+}

@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+                aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header"><h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close">
+                </button>
+            </div>
+            <div class="offcanvas-body"> <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Main</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contacts' %}">Contacts</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a></li>
+                <a href="{% url 'reg' %}"><button class="btn btn-outline-warning">Registration</button></a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            {% if messages %}
+                {% for mess in messages %}
+                    <div class="alert alert-success">{{ mess }}</div>
+                {% endfor %}
+            {% endif %}
+
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <aside class="col-md-4">
+            <h3>Side part</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad alias aut, cum deleniti dicta eum
+                expedita incidunt iusto libero magnam molestiae molestias nisi odit officia quaerat quidem repellendus unde!
+            </p>
+            {% block aside_block %}
+            {% endblock %}
+
+        </aside>
+    </div>
+</div>
+
+</body>
+
+<footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+<div class="col mb-3">
+<a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap">
+<svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> </a>
+<p class="text-body-secondary">© 2025</p> </div> <div class="col mb-3"></div>
+<div class="col mb-3"> <h5>Section</h5> <ul class="nav flex-column"> <li class="nav-item mb-2">
+<a href="#" class="nav-link p-0 text-body-secondary">Home</a></li> <li class="nav-item mb-2">
+<a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+</ul> </div> <div class="col mb-3"> <h5>Section</h5> <ul class="nav flex-column">
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> </ul> </div>
+<div class="col mb-3"> <h5>Section</h5> <ul class="nav flex-column">
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> </ul>
+</div>
+</footer>
+
+</html>
