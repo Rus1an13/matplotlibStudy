@@ -2,6 +2,15 @@ body {
     background: #fafafa;
 }
 
+greetings {
+    background-color: #feffee;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    color: #1e293b;
+}
+
 .alert-light {
     border-color: #006b1b;
 }
