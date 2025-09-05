@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block title %}
 {{ title }}
@@ -6,22 +7,22 @@
 
 {% block content %}
 
-<!-- {{ news }} -->
+{% comment %} {{ news }} {% endcomment %}
 <div class="greetings">
-    <h1>Мы помогаем Вам, кто делает ремонт!</h1>
+    <p>Мы помогаем Вам, кто делает ремонт!</p>
 </div>
 
-{% for post in news %}
+{% comment %} {% for post in news %} {% endcomment %}
 <div class="alert alert-light">
     
     <h1>{{ post.title }}</h1>
     <p>{{ post.text }}</p>
     <span class="text-muted">Publication: {{ post.date|date:"j F Y, H:i:s" }}</span>
     {% if post.author %}
-    <p><b>Author:</b> <mark>{{ post.author }}</mark></p>
+    <p><b>Author:</b><mark>{{ post.author }}</mark></p>
     {% else %}
     <p><b>Author:</b> <mark>Admin</mark></p>
     {% endif %}
 </div>
-{% endfor %}
+{% comment %} {% endfor %} {% endcomment %}
 {% endblock %}

@@ -4,10 +4,12 @@ from django.contrib.auth.models import User
 
 
 class News(models.Model):
+    #slug = models.SlugField() # Для создания своего URL адреса
     title = models.CharField('Article name', max_length=100, unique=True)
     text = models.TextField('The main text of article')
     date = models.DateTimeField('Date!', default=timezone.now)
     author = models.ForeignKey(User, verbose_name='Author!', on_delete=models.CASCADE)
+    img = models.ImageField(default='electrician.jpg', upload_to='img')
 
     views = models.IntegerField('Views', default=1)
     sizes = (
