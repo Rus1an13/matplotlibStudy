@@ -16,6 +16,21 @@ nav {
     color: #1e293b;
 }
 
+.elementer {
+    display: flex;
+    width: 33%;
+    gap: 20px 20px;
+    row-gap: 20px;
+    column-gap: 20px;
+    border-style: solid;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.elementer img {
+    display: block;
+    width: 100%;
+}
+
 .alert-light {
     border-color: #006b1b;
 }
