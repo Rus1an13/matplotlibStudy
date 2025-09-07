@@ -2,9 +2,12 @@ body {
     background: #47d842dc;
 }
 
-nav {
-    background-color: #472cc2b7;
+nav h2 {
+    transition: transform 1s;
+}
 
+nav h2:hover {
+    transform: scale(1.1);
 }
 
 .greetings {
@@ -44,8 +47,7 @@ nav {
 }
 
 .elementer:hover {
-    transform: scale(1.05);
-    
+    transform: scale(1.05);    
 }
 
 .alert-light {
@@ -56,6 +58,7 @@ nav {
     padding: 20px;
     background: #fafafa;
     border: 1px solid silver;
+    margin-top: 20px;
 }
 
 .form-register .helptext {

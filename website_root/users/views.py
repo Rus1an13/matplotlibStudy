@@ -8,9 +8,9 @@ def register(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # form.save()
+            form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'User {username} was successfully created!')
+            messages.success(request, f'Пользователь {username} был успешно создан!')
             return redirect('home')
     else:
         form = UserRegisterForm()
@@ -18,7 +18,7 @@ def register(request):
         request,
         'users/registration.html',
         {
-            'title': 'Registration page!',
+            'title': 'Регистрация!',
             'form': form
         }
     )

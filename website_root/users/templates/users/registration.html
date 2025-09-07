@@ -6,10 +6,12 @@
             <div class="col-md-8">
                 <h1 class="text-center">{{ title }}</h1>
                 <form method="post" class="form-register">
-                    <!--        Обязательный токен для передачи данных-->
+                    <!--Обязательный токен для передачи данных-->
                         {% csrf_token %}
                         {{ form }}
-                    <button class="btn btn-outline-warning" type="submit">Register</button>
+                    <button class="btn btn-outline-primary" type="submit">Зарегистрироваться</button>
+                    <hr>
+                    <p>Уже зарегистрированы? <a href="{% url 'user' %}">Войти в личный кабинет!</a></p>
                 </form>
             </div>
         </div>
