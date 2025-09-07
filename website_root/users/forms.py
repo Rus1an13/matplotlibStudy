@@ -11,12 +11,12 @@ class UserRegisterForm(UserCreationForm):
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter email'}
         )
     )
-    # phone = forms.CharField(
-    #     label='Введите номер телефона',
-    #     required=True,
-    #     widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Phone number'}
-    #     )
-    # )    
+    phone = forms.CharField(
+        label='Введите номер телефона',
+        required=True,
+        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Phone number'}
+        )
+    )    
     username = forms.CharField(
         label='Имя',
         required=True,

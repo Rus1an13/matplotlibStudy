@@ -10,7 +10,7 @@ urlpatterns = [
     path('contacts', views.contacts, name='contacts')
 ]
 
-# подключение статических файло в режиме разработки
+# подключение статических файлов в режиме разработки
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
