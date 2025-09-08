@@ -43,7 +43,7 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username', 'email']
         
 
-class UserUpdateForm(forms.Form):
+class UserUpdateForm(forms.ModelForm):
         email = forms.EmailField(
         label='Введите email',
         required=True,
@@ -63,10 +63,11 @@ class UserUpdateForm(forms.Form):
             model = User
             fields = ['username', 'email']
     
-class ProfileImageForm(forms.Form):
+class ProfileImageForm(forms.ModelForm):
     img = forms.ImageField(
         label='Загрузить фото',
-        required=False
+        required=False,
+        widget=forms.FileInput
     )
     
     class Meta:
