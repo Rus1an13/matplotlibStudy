@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import News
+from .models import News, Masters
 
 def home(request):
     data = {
-        'news': News.objects.all(),
+        'masters': Masters.objects.all(),
         'title': 'MasterOk'
     }
     return render(request, 'blog/home.html', data)

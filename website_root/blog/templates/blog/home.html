@@ -7,15 +7,14 @@
 
 {% block content %}
 
-    {% comment %} {{ news }} {% endcomment %}
     <div class="greetings">
         <p>Мы помогаем Вам, кто делает ремонт!</p>
     </div>
-    <div class="container">
+    {% comment %} <div class="container">
         <div class="row justify-content-center">
             <div class="elementer row">
-                <div><p>электрики</p></div>
-                <div><img src="\blog\static\img\electrician.jpg" alt="hear must be a photo"></div>                
+                <div><p>{{ masters.master }}</p></div>
+                <div><img src="{{ masters.img.url }}" alt="hear must be a photo"></div>                
             </div>
             <div class="elementer row">
                 <div><p>сантехники</p></div>
@@ -54,6 +53,8 @@
                 <div><img src="\blog\static\img\window.jpg" alt="hear must be a photo"></div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
+
+    
 
 {% endblock content %}

@@ -3,6 +3,18 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class Masters(models.Model):
+    master = models.CharField('master', max_length=100, unique=True)
+    img = models.ImageField(default='electrician.jpg', upload_to='img')
+
+    def __str__(self):
+        return f'{self.master}'
+
+    class Meta:
+        verbose_name = 'Master'
+        verbose_name_plural = 'Masters'
+
+
 class News(models.Model):
     #slug = models.SlugField() # Для создания своего URL адреса
     title = models.CharField('Article name', max_length=100, unique=True)
