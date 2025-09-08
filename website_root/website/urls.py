@@ -13,3 +13,7 @@ urlpatterns = [
     path('exit/', authViews.LogoutView.as_view(template_name='users/exit.html'), name='exit'),
     path('', include('blog.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

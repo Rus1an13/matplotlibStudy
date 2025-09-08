@@ -137,4 +137,4 @@ LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'user'
 
 MEDIA_URL = '/pictures/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures', '/blog/static/img/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')

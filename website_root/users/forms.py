@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import Profile
 # from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.forms import UserCreationForm
 
@@ -40,3 +41,34 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email']
+        
+
+class UserUpdateForm(forms.Form):
+        email = forms.EmailField(
+        label='Введите email',
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter email'}
+        )
+    )
+        
+        username = forms.CharField(
+        label='Имя',
+        required=True,
+        help_text='You cannot enter symbols: @, /, _',
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter login'}
+        )
+    )
+        
+        class Meta:
+            model = User
+            fields = ['username', 'email']
+    
+class ProfileImageForm(forms.Form):
+    img = forms.ImageField(
+        label='Загрузить фото',
+        required=False
+    )
+    
+    class Meta:
+        model = Profile
+        fields = ['img']
