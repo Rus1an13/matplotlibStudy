@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row">
             {% block content %}
-            {% endblock %}
+            {% endblock content %}
         </div>
     </div>
 </body>
@@ -55,7 +55,7 @@
                     <a href="{% url 'home' %}" class="nav-link p-0 text-body-secondary">Home</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{% url 'contacts' %}" class="nav-link p-0 text-body-secondary">Contacts</a>
+                    <a href="{% url 'masterList' %}" class="nav-link p-0 text-body-secondary">MasterList</a>
                 </li>
             </ul>
         </div>

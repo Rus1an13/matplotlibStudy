@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.home, name='home'),
     path('reg/', userViews.register, name='reg'),
-    path('contacts', views.contacts, name='contacts')
+    path('masterList', views.ShowMasterView.as_view(), name='masterList')
 ]
 
 # подключение статических файлов в режиме разработки
