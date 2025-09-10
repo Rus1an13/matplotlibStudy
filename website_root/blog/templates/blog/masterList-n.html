@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+
+    <div class="greetings">
+        <p>Мы помогаем Вам, кто делает ремонт!</p>
+    </div>
+
+    <div class="alert alert-light">
+        <h1>{{ masters.master }}</h1>
+    </div>
+    {% for mast in masters %}
+        <div class="row justify-content-center">
+            <div class="elementer row">
+                <p>{{ mast.master}}</p>
+                <img src="{{ mast.img.url}}" alt="Photo">
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

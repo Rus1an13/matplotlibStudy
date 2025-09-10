@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center">{{ title }}</h1>
+                <form method="post" class="form-register auth">
+                    <!--Обязательный токен для передачи данных-->
+                        {% csrf_token %}
+                        {{ form }}
+                    <button class="btn btn-outline-primary" type="submit">Добавить мастера</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

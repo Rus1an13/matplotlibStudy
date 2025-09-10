@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import News, Masters
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView
 
 def home(request):
     data = {
@@ -22,12 +22,29 @@ class ShowMasterView(ListView):
     context_object_name = 'masters'
     ordering = ['id']
     
-    def get_context_data(self, **kwargs):
-        ctx = super(ShowMasterView, self).get_context_data(**kwargs)
+    def get_context_data(self, **kwards):
+        ctx = super(ShowMasterView, self).get_context_data(**kwards)
         
         ctx['title'] = 'Главная страница сайта!'
-        ctx['masters'] = 'Главная страница сайта!'
+        # ctx['masters'] = 'Главная страница сайта!'
         return ctx
+
+class MasterDetailView(DetailView):
+    model = Masters
+
+    def get_context_data(self, **kwards):
+        ctx = super(MasterDetailView, self).get_conetext_data(**kwards)
+        
+        ctx['master'] = Masters.objects.get(pr=self.kwargs['pk'])
+        return ctx
+        
+        return super().get_context_data(**kwards)
+
+class CreateMastersView(CreateView):
+    model = Masters
+    template_name = 'blog/create_master.html'
+    
+    fields = ['master', 'img']
 
 def masterList(request):
     data = {

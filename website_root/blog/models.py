@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 
 
 class Masters(models.Model):
-    master = models.CharField('master', max_length=100, unique=True)
-    img = models.ImageField(default='electrician.jpg', upload_to='img')
+    master = models.CharField('Мастер', max_length=100, unique=True)
+    img = models.ImageField('Изображение', default='electrician.jpg', upload_to='img')
 
     def __str__(self):
         return f'{self.master}'
