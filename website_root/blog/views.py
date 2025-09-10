@@ -45,6 +45,10 @@ class CreateMastersView(CreateView):
     template_name = 'blog/create_master.html'
     
     fields = ['master', 'img']
+    
+    # def form_valid(self, form):
+    #     form.instance.master = self.request.user
+    #     return super().form_valid(form)
 
 def masterList(request):
     data = {

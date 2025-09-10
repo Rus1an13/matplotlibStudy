@@ -1,11 +1,16 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Masters(models.Model):
     master = models.CharField('Мастер', max_length=100, unique=True)
     img = models.ImageField('Изображение', default='electrician.jpg', upload_to='img')
+
+    def get_absolute_url(self):
+        return reverse("model_detail", kwargs={"pk": self.pk})
+    
 
     def __str__(self):
         return f'{self.master}'
