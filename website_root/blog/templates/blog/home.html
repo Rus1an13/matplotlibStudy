@@ -56,10 +56,10 @@
     </div> {% endcomment %}
 
     {% for mast in masters %}
-        <div class="row justify-content-center">
-            <div class="elementer row">
+        <div class="elementer">
+            <div class=""><a href="#">
                 <p>{{ mast.master}}</p>
-                <img src="{{ mast.img.url}}" alt="Photo">
+                <img src="{{ mast.img.url}}" alt="Photo"></a>
             </div>
         </div>
     {% endfor %}
