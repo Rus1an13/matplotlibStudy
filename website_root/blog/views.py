@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import News, Masters
+from .models import Masters
 from django.views.generic import ListView, DetailView, CreateView
 
 def home(request):
@@ -16,21 +16,33 @@ def mastersList(request):
     }
     return render(request, 'blog/mastersList.html', data)
 
-class ShowMasterView(ListView):
+class Home(ListView):
     model = Masters
-    template_name = 'blog/mastersList.html'
+    template_name = 'blog/home.html'
     context_object_name = 'masters'
     ordering = ['id']
     
-    def get_context_data(self, **kwards):
-        ctx = super(ShowMasterView, self).get_context_data(**kwards)
-        
-        ctx['title'] = 'Главная страница сайта!'
-        # ctx['masters'] = 'Главная страница сайта!'
+    def get_context_data(self, **kwargs):
+        ctx = super(Home, self).get_context_data(**kwargs)
+        ctx['master'] = 'Главная страница'
         return ctx
+
+# class ShowMasterView(ListView):
+#     model = Masters
+#     template_name = 'blog/mastersList.html'
+#     context_object_name = 'masters'
+#     ordering = ['id']
+    
+#     def get_context_data(self, **kwards):
+#         ctx = super(ShowMasterView, self).get_context_data(**kwards)
+        
+#         ctx['title'] = 'Главная страница сайта!'
+#         # ctx['masters'] = 'Главная страница сайта!'
+#         return ctx
 
 class MasterDetailView(DetailView):
     model = Masters
+    template_name = 'blog/mastersList.html'
 
     def get_context_data(self, **kwards):
         ctx = super(MasterDetailView, self).get_conetext_data(**kwards)

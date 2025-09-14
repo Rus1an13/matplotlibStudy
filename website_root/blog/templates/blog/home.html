@@ -10,56 +10,13 @@
     <div class="greetings">
         <p>Мы помогаем Вам, кто делает ремонт!</p>
     </div>
-    {% comment %} <div class="container">
-        <div class="row justify-content-center">
-            <div class="elementer row">
-                <div><p>{{ masters.master }}</p></div>
-                <div><img src="{{ masters.img.url }}" alt="hear must be a photo"></div>                
-            </div>
-            <div class="elementer row">
-                <div><p>сантехники</p></div>
-                <div><img src="\blog\static\img\plumber.jpg" alt="hear must be a photo"></div>
-            </div>
-            <div class="elementer row">
-                <div><p>плиточники</p></div>
-                <div><img src="\blog\static\img\tiler.jpg" alt="hear must be a photo"></div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="elementer row">
-                <div><p>потолочники</p></div>
-                <div><img src="\blog\static\img\ceiling.jpg" alt="hear must be a photo"></div>                
-            </div>
-            <div class="elementer row">
-                <div><p>мебельщики</p></div>
-                <div><img src="\blog\static\img\furniture_maker.jpg" alt="hear must be a photo"></div>
-            </div>
-            <div class="elementer row">
-                <div><p>штукатуры-маляры</p></div>
-                <div><img src="\blog\static\img\painter.jpg" alt="hear must be a photo"></div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="elementer row">
-                <div><p>монтаж-демонтаж полов</p></div>
-                <div><img src="\blog\static\img\floor.jpg" alt="hear must be a photo"></div>                
-            </div>
-            <div class="elementer row">
-                <div><p>монтаж-демонтаж дверей</p></div>
-                <div><img src="\blog\static\img\door.jpg" alt="hear must be a photo"></div>
-            </div>
-            <div class="elementer row">
-                <div><p>монтаж-демонтаж окон</p></div>
-                <div><img src="\blog\static\img\window.jpg" alt="hear must be a photo"></div>
-            </div>
-        </div>
-    </div> {% endcomment %}
 
     {% for mast in masters %}
         <div class="elementer">
-            <div class=""><a href="#">
+            <div class=""><a href="{{ mast.get_absolute_url }}">
                 <p>{{ mast.master}}</p>
-                <img src="{{ mast.img.url}}" alt="Photo"></a>
+                <img src="{{ mast.img.url}}" alt="Photo">
+            </a>
             </div>
         </div>
     {% endfor %}
