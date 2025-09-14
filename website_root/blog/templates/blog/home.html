@@ -14,9 +14,8 @@
     {% for mast in masters %}
         <div class="elementer">
             <div class=""><a href="{{ mast.get_absolute_url }}">
-                <p>{{ mast.master}}</p>
-                <img src="{{ mast.img.url}}" alt="Photo">
-            </a>
+                <p>{{ mast.master }}</p>
+                <img src="{{ mast.img.url }}" alt="Photo"></a>
             </div>
         </div>
     {% endfor %}

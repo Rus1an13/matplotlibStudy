@@ -7,7 +7,7 @@
 
 {% block content %}
 
-    <div class="greetings">
+    {% comment %} <div class="greetings">
         <p>Мы помогаем Вам, кто делает ремонт!</p>
     </div>
 
@@ -21,6 +21,6 @@
                 <img src="{{ mast.img.url}}" alt="Photo">
             </div>
         </div>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 
 {% endblock content %}

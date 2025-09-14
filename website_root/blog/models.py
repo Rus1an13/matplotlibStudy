@@ -11,19 +11,19 @@ class Masters(models.Model):
     img = models.ImageField(
         'Изображение', default='electrician.jpg', upload_to='img')
 
+    def __str__(self):
+        return self.master
+
     def get_absolute_url(self):
         return reverse("mastersList", kwargs={'slug': self.slug})
 
-    def __str__(self):
-        return f'{self.slug}'
-
-    class Meta:
-        verbose_name = 'Master'
-        verbose_name_plural = 'Masters'
+    # class Meta:
+    #     verbose_name = 'Master'
+    #     verbose_name_plural = 'Masters'
 
 
 class News(models.Model):
-    # slug = models.SlugField() # Для создания своего URL адреса
+    slug = models.SlugField() # Для создания своего URL адреса
     title = models.CharField('Article name', max_length=100, unique=True)
     text = models.TextField('The main text of article')
     date = models.DateTimeField('Date!', default=timezone.now)
