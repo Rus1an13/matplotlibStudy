@@ -3,9 +3,11 @@ from django.contrib.auth.models import User
 from PIL import Image
 
 
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    img = models.ImageField('Фото пользователя', default='user.png', upload_to='user_images')
+    img = models.ImageField('Фото пользователя', default='user_images/user.png', upload_to='user_images')
     
     def __str__(self):
         return f'Профиль пользователя {self.user.username}'
