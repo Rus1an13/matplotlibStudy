@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
     'blog',
     'users.apps.UsersConfig',
     'main',
@@ -138,3 +139,5 @@ LOGIN_URL = 'user'
 
 MEDIA_URL = '/pictures/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+
+# AUTH_USER_MODEL = 'core.User'

@@ -1,9 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
+# from phonenumber_field.modelfields import PhoneNumberField
 from PIL import Image
 
-
-
+# class User(AbstractUser):
+#     phone_number = PhoneNumberField()
+    
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
